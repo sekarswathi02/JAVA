@@ -1,0 +1,122 @@
+//different time complexity
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        Scanner s= new Scanner(System.in);
+        int n=s.nextInt(),c=0;
+        for(int i=1;i<=n;i++){
+           if(n%i==0){
+              c++;
+           }
+           System.out.print((c==2)?("prime"):("non prime"));#ternary operator
+        }
+    }
+}
+
+O(n)           97     100
+O(n-2)         95     98
+O(n/2)         47     1
+O(root n)      8      1
+O(root n/2)    4      0
+O(root n/4)    2      0
+O(root n/8)    0-1    0
+
+(or) 
+
+Scanner s= new Scanner(System.in);
+        int n=s.nextInt(),f=1;
+        for(int i=2;i<=n/2;i++){
+           if(n%i==0){
+              f=0;
+              break;
+           }
+           System.out.print((c==2)?("prime"):("non prime"));#ternary operator
+        }
+    }
+}
+(or)  O(root n)       8   1
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(),f=1,sq = (int)Math.sqrt(n);
+        for(int i =2;i<=sq;i++)
+        {
+            if(n%i==0){
+                f=0;
+                break;
+            }
+        }
+        System.out.print((f==1)?("prime"):("non prime"));
+    }
+}
+
+(or)  O(root n/2)    4   0
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(),f=1,sq = (int)Math.sqrt(n),i;
+        if(n%2==0 && n>2)
+        {
+           System.out.print("non prime");
+        }
+        else
+        {
+         for(i=3;i<=sq && n%i!=0;i=i+2);
+        System.out.print((i>sq)?("prime"):("non prime"));
+    }
+   }
+}
+     (or)
+O(root n/4)    2   0
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(),f=1,sq = (int)Math.sqrt(n),i, j;
+        if(n%2==0 && n>2)
+        {
+           System.out.print("non prime");
+        }
+        else
+        {
+         for(i=3;i<=sq;i<=j && n%i!=0 && n%j!=0;i=i+2,j=j-2);
+        System.out.print((i>j)?("prime"):("non prime"));
+    }
+   }
+}
+This code is not correct
+                        (or)
+
+O(root n/8)    0-1    0
+
+import java.util.*;
+public class Main 
+{
+    public static void main (String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt(),sq=(int)Math.sqrt(n),i;
+        if(n%2==0 && n>2)
+        {
+            System.out.print("non prime");
+        }
+        else if(n%3==0 && n>3)
+        {
+            System.out.print("non prime");
+        }
+        else
+        {
+            for(i=5;i<=sq && n%i!=0 && n%(i+2)!=0;i=i+6);
+            System.out.print((i>sq)?("prime"):("non prime"));
+        }
+        
+        
+    }
+}
