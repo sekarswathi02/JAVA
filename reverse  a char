@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main 
+{
+    public static void main (String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        String str=new String(s.nextLine());
+        char ch[]=str.toCharArray();
+        for(int i=0,j=ch.length-1;i<j;i++,j--)
+        {
+            while(!(ch[i]>=97 && ch[i]<=122))
+            {
+                i++;
+            }
+            while(!(ch[j]>=97 && ch[j]<=122))
+            {
+                j--;
+            }
+            if(i<j)
+            {
+                char c=ch[i];
+                ch[i]=ch[j];
+                ch[j]=c;
+            }
+        }
+        System.out.print(String.valueOf(ch));
+    }
+}
