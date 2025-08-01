@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Stack{
+    int top = -1;
+    int []stack=new int[5];
+    void push(int val){
+        if(top==stack.length-1){
+            System.out.println("Stackoverflow");
+        }else{
+            stack[++top]=val;
+        }
+    }
+	void display(){
+	    for(int i=0;i<stack.length;i++){
+	        System.out.print(stack[i]+" ");
+	    }
+	}
+}
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack s=new Stack();
+        for(int i=0;i<5;i++){
+            s.push(sc.nextInt());
+        }
+        s.display();
+    }
+}
