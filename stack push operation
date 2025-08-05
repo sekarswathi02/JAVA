@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Stack {
+    int top = -1;
+    int[] stack = new int[6];
+
+    void push(int val) {
+        if (top == stack.length - 1) {
+            System.out.println("Stack is overflow");
+        } else {
+            stack[++top] = val;
+        }
+    }
+
+    void display() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+        } else {
+            System.out.print("Stack elements: ");
+            for (int i = 0; i <= top; i++) {
+                System.out.print(stack[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack s = new Stack();
+
+        System.out.print("Enter how many elements (max 6): ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            int val = sc.nextInt();
+            s.push(val);
+        }
+
+        s.display();
+    }
+}
