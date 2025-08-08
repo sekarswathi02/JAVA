@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		for(int i=0;i<n;i++)
+		arr[i]=sc.nextInt();
+		for(int i=0;i<n;i++){
+		   int key = arr[i];
+		   int value = hm.getOrDefault(key, 0)+1;
+		   hm.put(key, value);
+		}
+		for(int key: hm.keySet()) {
+		   System.out.println(key+"->"+hm.get(key));
+		}
+	}
+}
